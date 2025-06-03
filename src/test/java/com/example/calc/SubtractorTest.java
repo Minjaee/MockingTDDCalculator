@@ -21,6 +21,8 @@ public class SubtractorTest {
 
         // Subtractor 생성
         subtractor = new Subtractor(adder, flipper);
+
+        //
     }
 
     @Test

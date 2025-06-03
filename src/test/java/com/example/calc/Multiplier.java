@@ -1,10 +1,5 @@
 package com.example.calc;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
-
 public class Multiplier implements IMultiplier {
     private final IAdder adder;
     private final IFlipper flipper;
@@ -23,6 +18,10 @@ public class Multiplier implements IMultiplier {
             result = adder.add(result, a);
         }
 
-        return b < 0 ? flipper.flip(result) : result;
+        if (b < 0) {
+            result = flipper.flip(result);
+        }
+
+        return result;
     }
 }
